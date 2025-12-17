@@ -7,6 +7,8 @@ from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import AllowAny
 import requests
+from django.db.models import Count
+
 
 
 class StudentViewSet(ModelViewSet):
@@ -35,3 +37,8 @@ def json_users(request):
             {"error": "Unable to fetch data from third-party API"},
             status=status.HTTP_503_SERVICE_UNAVAILABLE
         )
+
+@api_view(['GET'])
+def student_report(request):
+    report = Student.objects.values('course').annotate(total=Count('id'))
+    return Response(report, status=status.HTTP_200_OK)
