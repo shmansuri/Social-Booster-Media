@@ -73,7 +73,10 @@ ASGI_APPLICATION = 'Assignment.asgi.application'
 
 
 CORS_ALLOWED_ORIGINS=[
-   "http://localhost:3000"
+   "http://localhost:3000",
+   "localhost",
+    "127.0.0.1",
+    ".railway.app"
 ]
 CORS_ALLOW_CREDENTIAL = False
 
