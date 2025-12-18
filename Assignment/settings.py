@@ -73,7 +73,7 @@ ASGI_APPLICATION = 'Assignment.asgi.application'
 
 
 CORS_ALLOWED_ORIGINS=[
-   "http://localhost:3000",
+   "https://social-booster-media-production.up.railway.app/",
    "localhost",
     "127.0.0.1",
     ".railway.app"
